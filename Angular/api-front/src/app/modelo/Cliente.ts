@@ -1,5 +1,6 @@
 export class Cliente {
-  codigo: number = 0;
+  [x: string]: any;
+  codigo?: number;
   nome: String = '';
   idade: number = 0;
   cidade: String = '';

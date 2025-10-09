@@ -7,22 +7,23 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
+@RequestMapping("/clientes")
 public class Controller {
 
     @Autowired
     private Repository acao;
 
-    @PostMapping("/")
+    @PostMapping
     public Cliente cadastrar(@RequestBody Cliente cliente){
         return acao.save(cliente);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public Iterable<Cliente> selecionar(){
         return acao.findAll();
     }
 
-    @PutMapping("/")
+    @PutMapping
     public Cliente editar(@RequestBody Cliente cliente){
         return acao.save(cliente);
     }

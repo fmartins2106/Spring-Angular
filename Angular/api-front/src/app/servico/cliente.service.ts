@@ -10,7 +10,7 @@ export class ClienteService {
 
   // URL da API
 
-  private url:string = 'http://localhost:8080';
+  private url:string = 'http://localhost:8080/clientes';
 
   constructor(private http:HttpClient) { }
 
@@ -18,5 +18,10 @@ export class ClienteService {
   //metodo para selecionar todos os clientes;
   selecionar():Observable<Cliente[]>{
     return this.http.get<Cliente[]>(this.url);
+  }
+
+  // Método Cadastrar Cliente;
+  cadastrar(obj:Cliente):Observable<Cliente>{
+    return this.http.post<Cliente>(this.url, obj);
   }
 }
